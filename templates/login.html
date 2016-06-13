@@ -6,8 +6,10 @@
    <meta name="description" content="TaggEm.
     Helps to tag your friends with any content on Internet" />
     <meta name="keywords" content="TaggEm,Tags,Friends" />
+
+    <meta name="google-signin-client_id" content="316193309283-p2j4rca3lbmcpj749bhij5ea41tf7579.apps.googleusercontent.com">
     
-    <title>TaggEm - Welcome to Dashboard</title>
+    <title>TaggEm - Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',filename='assets/css/bootstrap.css') }}" rel="stylesheet">
@@ -30,19 +32,64 @@
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script type="text/javascript">
+	function onSignIn(googleUser) {
+	 var response=googleUser.getAuthResponse();
+	 var id_token= googleUser.getAuthResponse().id_token;
+ 	 var profile = googleUser.getBasicProfile();
+ 	 	 console.log('ID: ' + id_token);
+ 	 	 console.log('Auth-response');
+ 	 	 for(var key in response) {
+   			 console.log('key'+ key+':'+response[key]);
+			}
+ 	 console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+ 	 console.log('Name: ' + profile.getName());
+ 	 console.log('Image URL: ' + profile.getImageUrl());
+ 	 console.log('Email: ' + profile.getEmail());
+
+ 	 //Send id_token via post (https)
+ 	 var xhr = new XMLHttpRequest();
+	 xhr.open('POST', 'https://localhost:8000/tokenSignInGoogle');
+	 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	 xhr.onload = function() {
+ 	 console.log('Signed in as: ' + xhr.responseText);
+ 	 //window.location=xhr.responseText;
+					}	;
+
+      xhr.send('idtoken=' + id_token);
+}
+
+
+      </script>
+      <script>
+ 	 function signOut() {
+   		  var auth2 = gapi.auth2.getAuthInstance();
+  		  auth2.signOut().then(function () {
+    	  console.log('User signed out.');
+  	  });
+
+
+  	}
+	</script>
 
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+		      <form class="form-login" >
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <!-- <input type="text" class="form-control" placeholder="User ID" autofocus>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password">
 		            <label class="checkbox"> -->
-		            <button class="btn btn-facebook btn-block" type="submit"><i class="fa fa-facebook "></i> Facebook</button>
-		                <button class="btn btn-google  btn-block"  ><i class="fa fa-google" ></i> Google</button>
+		            <a href="#" onclick="signOut();">Sign out</a>
+		           <!--  <button class="btn btn-facebook btn-block" type="submit"><i class="fa fa-facebook "></i> Facebook</button>
+
+		           -->   
+		           	<button class="btn g-signin2 btn-block" data-onsuccess="onSignIn" type="submit"><i class="fa fa-google "></i> Facebook</button>
+		           		
+		             <div class="g-signin2 btn-block btn " data-onsuccess="onSignIn"></div>
 		                <span class="pull-right">
 		                   
 		                </span>

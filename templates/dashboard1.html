@@ -1,0 +1,168 @@
+
+
+{% extends "base.html" %}
+
+{% block dashboard %}
+<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row">
+                  <div class="col-lg-9 main-chart">
+                  
+                  	<div class="row mtbox">
+                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                  			<div class="box1">
+					  			<a href="/feed" >
+                  <span class="li_heart"></span>
+					  			<h3>Feed</h3>
+                  			</div>
+					  			<p>See the stuffs yours friends tagged you in.</p>
+                  		</div> </a>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_cloud"></span>
+					  			<h3>+48</h3>
+                  			</div>
+					  			<p>48 New files were added in your cloud storage.</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_stack"></span>
+					  			<h3>+10</h3>
+                  			</div>
+					  			<p>You have 10 unread messages in your inbox.</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_news"></span>
+					  			<h3>+10</h3>
+                  			</div>
+					  			<p>More than 10 news were added in your reader.</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+                        <a href="/settings" >
+					  			<span class="li_data"></span>
+					  			<h3>Settings</h3>
+                  			</div> </a>
+					  			<p>Configure your settings here.</p>
+                  		</div>
+                       
+                  	
+                  	</div><!-- /row mt -->	
+                  
+                      
+                      
+                    
+           
+					
+					<div class="row mt">
+                      
+					</div><!-- /row -->	
+					
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                  
+                  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add new link</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="link" name="link" />
+      <div id="fetch" class="invisible"> <img src="static/assets/ring.gif" height="30" width="80" /><span> Fetching data </span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                  
+                  <div class="col-lg-3 ds"  >
+                    <!--COMPLETED ACTIONS DONUTS CHART-->
+						<h3>NOTIFICATIONS</h3>
+                 <div id="notifications" >                  
+                      <!-- First Action -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                      	</div>
+                      	<div class="details">
+                      		<p><muted>2 Minutes Ago</muted><br/>
+                      		   <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Second Action -->
+                      {% for item in notification %}
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                      	</div>
+                      	<div class="details">
+                      		<p><muted>{{ item.time }}</muted><br/>
+                      		   <a href="#">{{ item.user}}</a> tagged you.<br/>
+                      		</p>
+                      	</div>
+                      </div>
+                      {% endfor %}
+                       
+                      </div>
+
+                 
+                         
+                      
+                  </div>
+                  </div>
+                  
+          </div>
+      
+      <!--footer end-->
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2016 -Taggem
+              <a href="/dashboard#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+
+  <script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Hello user!',
+            // (string | mandatory) the text inside the notification
+            text: '<h5>Welcome to TAGGEM Dashboard. Here you can find all your shared stuffs. We keep it safe here.</h5>',
+            // (string | optional) the image to display on the left
+            image: 'static/assets/img/me.jpg',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: true,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+        });
+  </script>
+
+  {% endblock %}
