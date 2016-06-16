@@ -124,7 +124,7 @@ def newsfeed():
     print "TEST:::::::::::"
     feed_list=[]
     connection=r.connect(host='localhost',port=28015)
-    feed_db=r.db('taggem').table('post').filter({'user_id':'akshaynathr@gmail.com'}).order_by(r.desc('date')).run(connection)
+    feed_db=r.db('taggem').table('post').filter({'user_id':'akshaynathr@gmail.com'}).order_by(r.asc('date')).run(connection)
     count=r.db('taggem').table('post').filter({'user_id':'akshaynathr@gmail.com'}).run(connection)
     print feed_db
     for f in feed_db:

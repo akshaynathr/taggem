@@ -29,7 +29,7 @@ def test():
 
     
  
-    
+    print (dir(token))
     session['google_auth_token']=pickle.dumps(token)
     #session['google_auth_toke']=gdata.gauth.token_to_blob(token)
 
