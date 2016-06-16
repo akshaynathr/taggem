@@ -8,10 +8,11 @@ def dbSetUp():
     connection=r.connect(host='localhost',port=28015)
     try:
         r.db_create('taggem').run(connection)
-        r.db('taggem').table_create('test').run(connection)
+        r.db('taggem').table_create('user').run(connection)
+        r.db('taggem').table_create('post').run(connection)
         print("Database setup completed")
     except RqlRuntimeError:
-        print("Database already exist")
+        print("Database running Okay")
     finally:
         connection.close()
 
