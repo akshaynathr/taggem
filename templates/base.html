@@ -9,7 +9,8 @@
     <meta name="google-signin-client_id" content="316193309283-p2j4rca3lbmcpj749bhij5ea41tf7579.apps.googleusercontent.com">
 
     <title>TaggEm - Welcome to Dashboard</title>
-
+ 
+    <link rel="icon" href="static/assets/img/tag.png">
     <!-- Bootstrap core CSS -->
     <link href="static/assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
@@ -49,8 +50,10 @@
    function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
-        console.log('User signed out.');
-        window.href="/login"
+        console.log('User signed out.');});
+        auth2.disconnect().then(function () {
+        console.log('User disconnected.');
+        //window.location="/login"
       });
           
     }
@@ -74,7 +77,7 @@
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
-                    <li class="dropdown">
+                   <!--  <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="/dashboard#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
@@ -141,7 +144,7 @@
                                 <a href="#">See All Tasks</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                    <!--  <li id="header_inbox_bar" class="dropdown">
