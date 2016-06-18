@@ -54,8 +54,8 @@
 	 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	 xhr.onload = function() {
  	 console.log('Signed in as: ' + xhr.responseText);
- 	 //window.location=xhr.responseText;
-					}	;
+ 	 window.location=xhr.responseText; 
+					}	; //111237505975220580487
 
       xhr.send('idtoken=' + id_token);
 }
@@ -75,21 +75,24 @@
 
 	  <div id="login-page">
 	  	<div class="container">
+	  	<style type="text/css">
+	  			#login {width: 100% !important;}
+
+	  	</style>
 	  	
 		      <form class="form-login" >
 		        <h2 class="form-login-heading">sign in now</h2>
-		        <div class="login-wrap">
+		        <div class="login-wrap" style="text-align='center';">
 		            <!-- <input type="text" class="form-control" placeholder="User ID" autofocus>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password">
 		            <label class="checkbox"> -->
-		            <a href="#" onclick="signOut();">Sign out</a>
+		            <!-- <a href="#" onclick="signOut();">Sign out</a> -->
 		           <!--  <button class="btn btn-facebook btn-block" type="submit"><i class="fa fa-facebook "></i> Facebook</button>
 
 		           -->   
-		           	<button class="btn g-signin2 btn-block" data-onsuccess="onSignIn" type="submit"><i class="fa fa-google "></i> Facebook</button>
-		           		
-		             <div class="g-signin2 btn-block btn " data-onsuccess="onSignIn"></div>
+		            	
+		             <div id="login" class="g-signin2" data-onsuccess="onSignIn" style="margin='50%';"></div>
 		                <span class="pull-right">
 		                   
 		                </span>
@@ -103,10 +106,10 @@
 		                <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
 		            </div> -->
 		            <div class="registration">
-		                Don't have an account yet?<br/>
+		               <!--  Don't have an account yet?<br/>
 		                <a class="" href="/signup">
 		                    Create an account
-		                </a>
+		                </a> -->
 		            </div>
 		
 		        </div>
