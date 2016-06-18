@@ -7,7 +7,7 @@ import json
 
 
 
-def fetch(url):
+def fetch(url,title_from_link=" "):
 	
 	# whlile I was halfway deving this function and s searching through for writing image fetcher, came across embed.ly
 	# so here we go :p
@@ -35,7 +35,7 @@ def fetch(url):
 		imageurl='/static/assets/img/default_feed_icon.png'
 
 	if title.replace(' ','')=='':
-		title="Shared article"
+		title=title_from_link
 
 	if text.replace(' ','') =='':
 		text=title
