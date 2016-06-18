@@ -7,9 +7,23 @@
  </style>
  <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Settings </h3>
+          	<h3><i class="fa fa-angle-right"></i> Contacts sync</h3>
 
-          	<a href="/test" > Google + </a>
+
+          	 
+          	Sync contacts from <a href="/test" > Google Contacts </a>
+
+          	{% if sync %} <p style="color:green"> &nbsp;Synced </p> {% else %} <p style="color:red"> &nbsp;Not synced </p>{% endif %}
+
+          	<br/>
+
+          	<h3 ><i class="fa fa-angle-right"></i> Chrome extension ID</h3>
+          	  {% if sync %} <h4 style="margin-top='20px'"><p style="color:green"> Id : {{ id }} </p> </h4> <br/> (Please copy the id above to chrome extension to setup) {% else %} <p style="color:red"> Please sync the contacts to get id </p>{% endif %} <br/>
+
+          	<div>
+
+
+
           	</div>
           	</section>
           	</section>
