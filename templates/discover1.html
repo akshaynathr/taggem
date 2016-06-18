@@ -44,7 +44,7 @@
                               create(feed[i].img_url,feed[i].title,feed[i].text,feed[i].link);
                           }
                             } 
-                          
+                           
 
                   }
                          });
@@ -52,7 +52,7 @@
 
 
 
-          },8000);
+          },10000);
 
                        // alert("Data: " + feed.link+" status: " + status);
     
@@ -72,11 +72,16 @@
               '  <div >'+
               '<img id="blog-bg" src="http://girltalkhq.com/wp-content/uploads/2013/09/Image-11.jpg" />' +
                  
-                 ' <div class="blog-title">Colors and paints</div>'+
+                
                 '</div>'+
+                 ' <div class="blog-title">Colors and paints</div>'+
               '  <div class="blog-text">'+
               '    <p>The modern  techniques in arts. <a href="#">Read More</a></p>'+
              '   </div>'+
+              '  <div class="blog-text">'+
+              '    <p>Send to. <a href="#">Anand</a></p>'+
+             '   </div>'+
+
                ' <div class="pr2-social centered">'+
                   '<a href="#"><i class="fa fa-twitter"></i></a>'+
                   '<a href="#"><i class="fa fa-facebook"></i></a>'+
@@ -91,7 +96,7 @@
               }
 
 
-
+// '<img id="blog-bg" src="' + img_url +' " />' +
 
           		function create(img_url,title,text,link) {
                   
@@ -99,14 +104,19 @@
 
           			$('#main_row').prepend('<div id="content" class="col-lg-3 col-md-3 col-sm-3 mb">'+
               '<div class="content-panel pn">'+
+              '  <div class="blog-text" style="background-color:#E05D5D;color:white;margin-bottom:10px;margin-top:5px;padding:0px;">'+
+              '    <p>Send to. Anand</p>'+
+             '   </div>'+
               '  <div >'+
-              '<img id="blog-bg" src="' + img_url +' " />' +
+
+             '<div id="blog-bg" style="background: url('+img_url+') no-repeat center top;background-size:cover;background-color:#fff;"> </div>'+
                  
                  ' <div class="blog-title">'+ title+ '</div>'+
                 '</div>'+
               '  <div class="blog-text">'+
-              '    <p>'+ text +' <a href="'+link+'" target="_blank">Read More</a></p>'+
+              '    <p>'+ text +' <a href="'+link+'" target="_blank" style="color:black">Read More</a></p>'+
              '   </div>'+
+
                ' <div class="pr2-social centered">'+
 									'<a href="#"><i class="fa fa-twitter"></i></a>'+
 									'<a href="#"><i class="fa fa-facebook"></i></a>'+
