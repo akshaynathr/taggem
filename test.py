@@ -23,8 +23,7 @@ def test():
     
     
 # Save the token for later use.
-    token = gdata.gauth.OAuth2Token(
-        client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=' '.join(SCOPES),
+    token = gdata.gauth.OAuth2Token(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, scope=' '.join(SCOPES),
         user_agent=USER_AGENT)
 
     
