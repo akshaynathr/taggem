@@ -1,0 +1,29 @@
+{
+	"manifest_version":2,
+	"name":"TaggEm",
+	"description":"TaggEm helps to share any content with your friend by just tagging them on the content.",
+	"version":"1.0",
+
+ "commands": {
+          "toggle-feature-foo": {
+            "suggested_key": {
+              "default": "Ctrl+Shift+5"
+            },
+            "description": "Toggle feature foo",
+            "global": true
+          }
+        },
+
+
+	"browser_action":{
+		"default_title":"Tag your friend",
+		"default_icon":"tag.png",
+		"default_popup":"popup.html"
+	},
+	"permissions": [
+		"storage",
+		"activeTab",
+		"https://ajax.googleapis.com/"
+			]
+	
+}

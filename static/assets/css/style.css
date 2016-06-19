@@ -2262,3 +2262,6 @@ label {
 .invisible { display: none;}
 
 .pn { height:300px; background-color: #E05D5D;}
+
+
+a:hover { color: white;}

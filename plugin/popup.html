@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TaggEm. Tag your friends on web.</title>
+    <style>
+      body {
+        font-family:  "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    
+      <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,600,700%7COpen+Sans:300,400,600,700%7CHandlee" rel="stylesheet"/>
+    
+
+     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+      
+     <link rel="stylesheet" href="css/main.css"/>
+     <link rel="stylesheet" href="typeahead.css"/>
+     <link rel="stylesheet" href="js/bootstrap-tagsinput.css"/>
+     <style type="text/css">
+         
+        .invisible{ display: none;}
+
+     </style>
+
+     
+   
+  </head>
+  <body class="well">
+  <div >
+
+ <script type="text/javascript" src="js/jquery1.11.0.min.js"></script>
+       <script type="text/javascript" src="js/myScript.js"></script>
+       <script type="text/javascript" src="handlebars.js"></script>
+       
+       <script type="text/javascript" src="js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+
+        <script type="text/javascript" src="typeahead.js"></script>
+       
+       
+<div id="title">
+  	<h1> TAGGEM </h1> <br/></div>
+	<input type="text"  id="friendList" name="friendList"  class="form-control typeahead" autocomplete="off"   placeholder="Tag your friends" autofocus/>  <br/>
+	<input type="text" id="message" name="message" class="form-control" size="50" autocomplete="off"  placeholder="Message"/></br>
+  <button id="tagbtn"    class="btn-primary" tabindex="-1">Tag!</button><br/>
+  <div style="width:100%; text-align:center;">
+  <div id="loading" class="invisible"> <img src="ring.gif" /> </br> Tagging.. </div>
+  </div>
+  <ul class="breadcrumb">
+  <li><a class="bottom_link" href="popup.html">Home</a></li>
+  <li><a class="bottom_link" href="settings.html">Settings</a></li>
+   
+   
+</ul>
+ 
+
+ </div>
+  </body>
+</html>
+

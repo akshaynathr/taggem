@@ -1,5 +1,9 @@
 
  $(document).ready(function () {
+
+        $('#main_row').hide().fadeIn(2000);
+
+
            $('#link').change(function () {  $('#fetch').removeClass('invisible');   
                 link= $('#link').val();
                 alert(link);

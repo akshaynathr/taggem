@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TaggEm. Tag your friends on web.</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+
+
+      .invisible{ display: None;}
+    </style>
+      <script type="text/javascript" src="js/jquery1.11.0.min.js"></script>
+     
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/main.css">
+   
+     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 
+   
+  </head>
+  <body class="well">
+  <script type="text/javascript" src="settings.js"></script>
+
+ 
+  <div >
+  	<h4> Settings </h4> <br/>
+	 
+  <ul class="breadcrumb">
+  <li><a class="bottom_link" href="popup.html">Home</a></li>
+  <li><a class="bottom_link" href="settings.html">Settings</a></li>
+  <input id="id" type="text" class="form-control" placeholder="Enter id" maxlength="36"/><p id="logged_info" class="invisible" style="color:white"> Logged in </p>
+  <button id="login" class="btn btn-blk btn-primary" style="display:block;width:100%; margin-top:5px;" >login</button>
+  <button id="logout" class="btn btn-blk btn-danger" style="margin-top:5px; width:100%; " >logout</button>
+  <p id="info" style="color:white"> Please log into your account in Taggem dashboard to find your id </p>
+    
+   
+</ul>
+ 
+
+ </div>
+  </body>
+</html>
+
