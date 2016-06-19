@@ -21,7 +21,7 @@
                          if(feed.length!=0){
                           for(var i=0;i<feed.length;i++){ 
 
-                              create(feed[i].img_url,feed[i].title,feed[i].text,feed[i].link);
+                              create(feed[i].img_url,feed[i].title,feed[i].text,feed[i].link,feed[i].sent_to);
                           }
                             }
                             else {
@@ -41,7 +41,7 @@
                            $('#main_row').empty();
                           for(var i=0;i<feed.length;i++){ 
 
-                              create(feed[i].img_url,feed[i].title,feed[i].text,feed[i].link);
+                              create(feed[i].img_url,feed[i].title,feed[i].text,feed[i].link,feed[i].sent_to);
                           }
                             } 
                            
@@ -98,18 +98,18 @@
 
 // '<img id="blog-bg" src="' + img_url +' " />' +
 
-          		function create(img_url,title,text,link) {
+          		function create(img_url,title,text,link,sent_to) {
                   
           			//alert("HELLO");
 
           			$('#main_row').prepend('<div id="content" class="col-lg-3 col-md-3 col-sm-3 mb">'+
               '<div class="content-panel pn">'+
               '  <div class="blog-text" style="background-color:#E05D5D;color:white;margin-bottom:10px;margin-top:5px;padding:0px;">'+
-              '    <p>Send to. Anand</p>'+
+              '    <p>Send to. '+sent_to+'</p>'+
              '   </div>'+
               '  <div >'+
 
-             '<div id="blog-bg" style="background: url('+img_url+') no-repeat center top;background-size:cover;background-color:#fff;"> </div>'+
+             '<div id="blog-bg" style="background: url('+img_url+') no-repeat center top;background-size:cover;background-color:#fff;padding:5px;"> </div>'+
                  
                  ' <div class="blog-title">'+ title+ '</div>'+
                 '</div>'+
