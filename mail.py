@@ -1,5 +1,6 @@
 from flask_mail import Mail,Message
 from views import app
+from views import session
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -20,8 +21,8 @@ def index():
 
 
 
-def send_mail(recepient,title,link):
+def send_mail(recepient,title,link,name):
     msg = Message(title, sender = 'taggemin@gmail.com', recipients = recepient)
-    msg.body = "Akshay tagged you here:  "+link + "\n \n \n sent via TAGGEM "+"(http://www.taggem.in)"
+    msg.body = name+" tagged you here:  "+link + "\n \n \n sent via TAGGEM "+"(http://www.taggem.in)"
     mail.send(msg)
     return "Sent"
