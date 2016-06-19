@@ -19,11 +19,11 @@ import test
 from models import dbSetUp
 import mail
 import api
+import contactsAPI
 #SSL  temporary
 context = SSL.Context(SSL.SSLv23_METHOD)
 context.use_privatekey_file('server.key')
 context.use_certificate_file('server.crt')
-
 dbSetUp()
 
 
@@ -54,6 +54,9 @@ def dashboard():
 
 @app.route('/settings')
 def settings():
+        if 'google_contact_synced' in session:
+            return render_template('settings.html',profile_pic=session['profile'],name=session['name'],sync=True,id=session['google_contact_synced'])
+
 	if 'GOOGLE_COOKIE_CONSENT' in session:
             auth_token=pickle.loads(session['google_auth_token'])
             print (dir(auth_token))
@@ -74,8 +77,7 @@ def settings():
 
             feed = gd_client.GetContacts(q=query)
 
-            t=requests.get('https://www.google.com/m8/feeds/contacts/default/full')
-            print t
+           
             print  (feed.entry)
             print  len(feed.entry)
             contact_list=[]
@@ -84,20 +86,51 @@ def settings():
                     family_name = entry.name.family_name is None and " " or entry.name.family_name.text
                     full_name = entry.name.full_name is None and " " or entry.name.full_name.text
                     given_name = entry.name.given_name is None and " " or entry.name.given_name.text
-                    print  full_name
+                    # print  full_name
                 
 
                     for email in entry.email:
                         if email.primary and email.primary == 'true':
-                            print '    %s' % (email.address)
+                            # print '    %s' % (email.address)
                             contact={'name':full_name,'email':email.address}
                             contact_list.append(contact)
 
-            print contact_list
- 
-        
+            # print contact_list
+            connection=r.connect(host='localhost',port=28015)
+            count=r.db('taggem').table('contacts').filter({'user_id':session['logged_user_ID']}).count().run(connection)
+            if count >0:
+                id=list(r.db('taggem').table('user').filter({'user_id':session['logged_user_ID']}).run(connection))[0]['id']
+            else :
+                r.db('taggem').table('contacts').insert({'user_id':session['logged_user_ID'],'contacts':contact_list}).run(connection)
+                user=list(r.db('taggem').table('user').filter({'user_id':session['logged_user_ID']}).run(connection))
+                print ("Contacts saved in database")
+                id=user[0]['id']
+            connection.close()
+            session['google_contact_synced']=id
+            print id
 
-        return render_template('settings.html',profile_pic=session['profile'],name=session['name'])
+            return render_template('settings.html',profile_pic=session['profile'],name=session['name'],sync=True,id= session['google_contact_synced'])
+
+
+        connection=r.connect(host='localhost',port=28015)
+        count=r.db('taggem').table('contacts').filter({'user_id':session['logged_user_ID']}).count().run(connection)
+        if count >0:
+            id=list(r.db('taggem').table('user').filter({'user_id':session['logged_user_ID']}).run(connection))[0]['id']
+        else :
+            r.db('taggem').table('contacts').insert({'user_id':session['logged_user_ID'],'contacts':contact_list}).run(connection)
+            user=list(r.db('taggem').table('user').filter({'user_id':session['logged_user_ID']}).run(connection))
+            print ("Contacts saved in database")
+            id=user[0]['id']
+        connection.close()
+        id=id.replace(' ','')
+        if id!='':
+            session['google_contact_synced']=id
+            sync=False
+            print id
+            return render_template('settings.html',profile_pic=session['profile'],name=session['name'],sync=True,id= session['google_contact_synced'])
+        else:
+
+            return render_template('settings.html',profile_pic=session['profile'],name=session['name'],sync=False)
 
 @app.route('/feed')
 def feed():
@@ -151,3 +184,18 @@ def obj():
     output=new_feed.save_to_db()
 
     return  str(output)
+
+
+@app.route('/auth',methods=['POST'])
+def auth():
+    data=request.get_json()
+    print data
+    id=data['id']
+    connection=r.connect(host='localhost',port=28015)
+    count=r.db('taggem').table('user').filter({'id':id}).count().run(connection)
+    if count > 0:
+        return "1"
+    else :
+        return "0"
+
+
