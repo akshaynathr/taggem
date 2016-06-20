@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- TITLE OF SITE -->
+    <title>TaggEm |Tag Your Friends anywhere on internet  </title>
+    <meta name="description" content="TaggEm.
+    Helps to tag your friends with any content on Internet" />
+    <meta name="keywords" content="TaggEm,Tags,Friends" />
+    <meta property="og:image" content="http://taggem.in/taggem.png"   />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- FAVICON  -->
+    <link rel="icon" href="static/main-layout/assets/images/favicon/tag.png">
+    <link rel="stylesheet" type="text/css" href="static/main-layout/assets/js/gritter/css/jquery.gritter.css" />
+    
+    <!-- =========================
+       STYLESHEETS 
+    ============================== -->
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/plugins/bootstrap.min.css">
+
+    <!-- FONT ICONS -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/icons/icons.min.css">
+     
+    <!-- GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,600,700%7COpen+Sans:300,400,600,700%7CHandlee" rel="stylesheet">
+    
+    <!-- PLUGINS STYLESHEET -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/plugins/plugins.min.css">
+    
+    <!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/style.css">
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/responsive.css">
+
+    <!-- COLORE STYLESHEET -->
+    <!-- Change here the Main Color of the Site: Choose your favorite predefined color from static/main-layout/assets/css/colors.css -->
+    <link rel="stylesheet" href="static/main-layout/assets/css/colors/red.css" title="red">
+    
+    
+    <!--[if lt IE 9]>
+            <script src="static/main-layout/assets/js/plugins/html5shiv.min.js"></script>
+            <script src="static/main-layout/assets/js/plugins/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- =========================
+             PRELOADER
+        ============================== -->
+        <div class="preloader">
+            <div class="loader-container">
+                <div class="text-logo">TaggEm</div>
+                <div class="signal"></div>
+            </div>
+        </div> 
+        
+
+        <!-- =========================
+             HEADER
+        ============================== -->
+        <header class="header type" id="top" data-stellar-background-ratio="0.5">
+            <!-- Background Overlay -->
+            <div class="overlay">
+
+                <!-- =========================================
+                     Navigation
+                ========================================== -->
+                <nav class="navbar navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Navbar-Header -->
+                                <div class="navbar-header">
+                                    
+                                    <!-- Mobile Menu -->
+                                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                        <i class="icon icon_menu"></i>
+                                    </button>
+
+                                    <!-- Text-Logo -->
+                                    <a href="#top" class="navbar-brand scrollto" title="TaggEm">
+                                        <span class="text-logo">TaggEm</span>
+                                    </a> 
+
+                                    <!-- Image-Logo: Remove this comments and the section above Text-Logo if you want to add an Image-Logo (recommended sizes -> max-height:50, max-width:200) 
+
+                                    <a href="#top" class="navbar-brand img-logo scrollto" title="SmartMvp">
+                                        <img src="static/main-layout/assets/images/logo.png" alt="Logo">
+                                    </a> 
+                                    -->
+
+                                </div><!-- /End Navbar-Header -->
+
+                                <!-- Navbar-Collapse -->
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <!-- Menu Items -->
+                                        <li><a href="#about" title="" class="scrollto">About</a></li>
+                                        <li><a href="#features" title="" class="scrollto">Features</a></li>
+                                      
+                                         
+                                        <!-- Login and Signup Modal on click 
+                                        <li><a class="btn btn-nav" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Login</a></li>
+                                        <li><a class="btn btn-nav btn-signup" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Sign Up</a></li> 
+                                        -->
+                                    </ul>
+                                </div><!-- /End Navbar-Collapse -->
+                            </div><!-- /End Col -->
+                        </div><!-- /End Row -->
+                    </div><!-- /End Container -->
+                </nav><!-- /End Sticky Navigation -->
+
+
+                <!-- =========================================
+                     Login/Signup Bootstrap Modal
+                ==========================================  -->
+                <div class="modal fade login" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <!-- Close Button -->
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <i class="icon icon_close_alt2"></i>
+                                </button>
+                                <!-- Modal-Headginer Title-->
+                                <h4 class="modal-title">Sign in to TagEmm</h4>
+                                <p class="modal-subtitle">Enter your email and password</p>
+                            </div><!-- /End Modal-Header -->
+
+                            <!-- Modal-Body Content -->
+                            <div class="modal-body">  
+                                <div class="box">
+                                     <div class="content">
+                                        <!-- Login Form -->
+                                        <div class="loginBox">
+                                            <form id="login-modal" role="form">
+                                                <!-- Success/Alert Notification -->
+                                                <p class="lm-success"><i class="icon icon_check_alt2"></i> <strong>Congratulation! Login modal validation is working. Implement your code.</strong></p>
+                                                <p class="lm-failed"><i class="icon icon_close_alt2"></i><strong> Something went wrong! Insert correct value.</strong></p>
+                                                <!-- Input Fields -->
+                                                <input id="lm-email" class="form-control input-lg" type="text" placeholder="Email" name="lm-email" required>
+                                                <input id="lm-password" class="form-control input-lg" type="password" placeholder="Password" name="lm-password" required>
+                                                <!-- Login Button -->
+                                                <button class="btn btn-color">Login</button>
+                                            </form>
+                                        </div><!-- /End Login Form -->
+                                     </div>
+                                </div><!-- /End Login Form Box -->
+                                <div class="box">
+                                    <!-- Signup Form -->
+                                    <div class="content registerBox" style="display:none;">
+                                        <form id="signup-modal" role="form">
+                                            <!-- Success/Alert Notification -->
+                                            <p class="sm-success"><i class="icon icon_check_alt2"></i> <strong>Congratulation! Signup modal validation is working. Implement your code.</strong></p>
+                                            <p class="sm-failed"><i class="icon icon_close_alt2"></i><strong> Something went wrong! Insert correct value.</strong></p>
+                                            <!-- Input Fields -->
+                                            <input id="sm-email" class="form-control input-lg" type="text" placeholder="Email" name="sm-email" required>
+                                            <input id="sm-password" class="form-control input-lg" type="password" placeholder="Password" name="sm-password">
+                                            <input id="sm-confirm" class="form-control input-lg" type="password" placeholder="Repeat Password" name="sm-confirm">
+                                            <!-- Signup Button -->
+                                            <button class="btn btn-color">Create Account</button>
+                                        </form>
+                                        
+                                    </div><!-- /End Signup Form -->
+                                </div><!-- /End Signup Form Box -->
+                            </div><!-- /End Modal-Body -->
+
+                            <!-- Modal-Footer -->
+                            <div class="modal-footer">
+                                <!-- Login-Footer. Redirect to Signup-Modal-->
+                                <div class="forgot login-footer">
+                                    <span>Don't have an account? 
+                                         <a href="#">Sign up.</a>
+                                    </span>
+                                </div>
+                                <!-- Signup-Footer. Redirect to Login-Modal -->
+                                <div class="forgot register-footer" style="display:none">
+                                     <span>Already have an account?</span>
+                                     <a href="#">Login</a>
+                                </div>
+                            </div><!-- /End Modal-Footer -->      
+                          
+                        </div><!-- /End Modal Content -->
+                    </div><!-- /End Modal Dialog -->
+                </div><!-- /End Modal -->
+
+                
+                <!-- =========================================
+                     Hero-Section
+                ========================================== -->
+                <div class="container vmiddle">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="hero-section">
+                                
+                                <!-- Welcome - Hero Message -->
+                                <h1 class="text-white">Tag your friends on web
+                                <br/><span data-typer-targets="Rashid,Rizwan,Neel,Ajin,Kamal,Yadhu,Anand,Mohzin,Avinesh,Arya,Abhi,Raman,Musfu,Sruthy,Seethal,Jenit"></span> </h1>
+                                <p class="text-white">The center point for sharing things</p>
+                                
+                                <!-- Learn More & Video Buttons -->
+                                <div class="btn-box">
+                                    <a href="#about" class="btn btn-ghost scrollto">Learn More</a>
+                                    <!-- Video Lightbox on Click -->
+                                    <a id="download" onclick="return ondevalert();"    class="btn btn-color "><i class="icon arrow_triangle-down_alt"></i>Download Chrome plugin</a>
+                                   <!-- <a href="http://youtu.be/SZEflIVnhH8" data-type="youtube" class="btn btn-color venobox"><i class="icon arrow_triangle-right_alt"></i>Play video</a> -->
+                                </div>
+
+                            </div><!-- /End Intro-Section -->
+                        </div><!-- /End Col -->
+                    </div><!-- /End Row -->
+                </div><!-- /End Container Hero-Section -->
+
+
+            </div><!-- /End Background Overlay -->
+        </header>
+        <!-- =========================
+             /END HEADER
+        ============================== -->
+
+        
+        <!-- =================================
+             SECTION ABOUT - INTRO FEATURES
+        ====================================== -->
+        <section class="intro-features" id="about">
+            <div class="container">
+                <!-- Padding -->
+                <div class="wrapper-lg">
+                    <div class="row">
+                        <!-- Section Header Title -->
+                        <div class="col-xs-12">
+                            <h2>New way of sharing contents that matter</h2>
+                            <p class="large">Tag any friend to any content on the internet. </p>
+                        </div>
+                    </div>
+                    <!-- Three Main Features with Icons -->
+                    <div class="row">
+                        <div class="col-sm-4 intro-content">
+                            <div class="icon-lg">
+                                <i class="icon icon-mobile"></i>
+                            </div>
+                            <h4>Share to anyone</h4>
+                            <p>Share any content in web to your friend by tagging him on the webpage</p>
+                        </div>
+                        <div class="col-sm-4 intro-content">
+                            <div class="icon-lg">
+                                <i class="icon icon-browser"></i>
+                            </div>
+                            <h4>Easy Access</h4>
+                            <p>Your friend can access the shared content via link received as message via fb messenger or Email.</p>  
+                        </div>
+                        <div class="col-sm-4 intro-content">
+                            <div class="icon-lg">
+                                <i class="icon icon-documents"></i>
+                            </div>
+                            <h4>Autosaved</h4>
+                            <p>All shared data are stored in the TaggEm dashboard. You and your friend can revisit the content anytime.</p>
+                        </div>
+                    </div><!-- /End Row --> 
+                </div><!-- /End Wrapper -->
+            </div><!-- /End Container -->
+        </section>
+        <!-- =============================
+             /END INTRO FEATURES
+        ============================== -->
+        
+        
+        <!-- ==================================================
+             SECTION 2 COLS - IMAGE RIGHT AND TEXT WITH CALL TO ACTION
+        ======================================================= -->
+        <section class="img-with-action light-bg" style="border:.04em solid black;" id="features">
+            <div class="container wrapper-lg">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <!-- Text Col -->
+                        <h3>Share everything by Tagging</h3>
+                        <p>Never again open a new messaging app or email to sent the most interesting things you see on web. Share it to your friend by just tagging them on the webpage. You can tag any friend in your Facebook or gmail contacts. Your friend will receive the content via fb messenger or email.</p>
+                        <!-- Call To Action Buttons -->
+                        <div class="btn-box">
+                            <!--<a href="#features" class="btn btn-grey scrollto">Learn More</a>-->
+                            <a id="download"  onclick="return ondevalert();"   class="btn btn-color scrollto"><i class="icon arrow_carrot-2dwnn_alt"></i>Download chrome plugin</a>
+                        </div>
+                        <!-- Div Required for Correct Charts Animation -->
+                        <div class="start-charts"></div>
+                    </div>
+                </div><!-- /End Row-->
+            </div><!-- /End Container-->
+            <!-- Image Col -->
+            <div class="hidden-sm hidden-xs col-md-6 img-col-bg img-right"></div>
+        </section>
+        <!-- =============================
+             /END SECTION 
+        ============================== -->
+        
+
+       
+        
+        
+        
+        
+        
+        
+         
+
+
+       
+ 
+        
+            
+         
+
+ 
+        
+        
+        <!-- ==================================================
+            FOOTER
+        ======================================================= -->
+        <footer class="footer dark-bg" id="footer">
+            <div class="container">
+                <div class="wrapper-lg">
+                    <div class="row">
+                        <!-- Footer Left Col -->
+                        <div class="col-md-5">
+                                <!-- Logo -->
+                                <a href="#top" class="scrollto" title="TaggEm">
+                                    <span class="text-logo">TaggEm</span>
+                                </a>
+                                <p class="footer-hero"> TaggEm provides new way of sharing contents from web to any of your friends. </p>
+                                 
+                        </div>
+                        <!-- Footer Contact Col -->
+                        <div class="col-md-3">
+                            <h5 class="text-white">Our Contact</h5>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="icon icon_mail"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <a href="mailto:akshaynathr@gmail.com">akshaynathr@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="icon icon_pin"></i>
+                                </div>
+                                <div class="contact-content">
+                                    GECT Thrissur<br>
+                                   Kerala, India
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="icon icon_phone"></i>
+                                </div>
+                                <div class="contact-content">
+                                    9562620753
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Right Col: Twitter Feed -->
+                        <div class="col-md-4">
+                                <h5 class="text-white">Recent Tweets</h5>
+                                <div class="tweet"></div>
+                        </div>
+
+                        <!-- Footer Menu and Copy -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="footer-nav">
+                                    <li>
+                                        <a href="#">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Terms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Privacy</a>
+                                    </li>
+                                </ul>
+                                <p class="footer-copy">&copy; 2016 - TaggEm. </p>
+                            </div>
+                        </div>
+                        
+                    </div><!-- End Row -->
+                </div><!-- /End Wrapper -->
+            </div><!-- /End Container -->
+        </footer>
+
+    </div><!-- /End Main Wrapper -->
+
+    <!-- =========================
+         SCRIPTS 
+    ============================== -->
+    <script src="static/main-layout/assets/js/plugins/jquery1.11.0.min.js"></script>
+    <script src="static/main-layout/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="static/main-layout/assets/js/plugins/jquery.easing.1.3.min.js"></script>
+    <script src="static/main-layout/assets/js/plugins/modernizr.custom.min.js"></script>
+    <script src="static/main-layout/assets/js/plugins/plugins.min.js"></script>
+    <script src="static/main-layout/assets/js/plugins/twitter/tweetie.min.js"></script>
+    <!-- Custom Script -->
+    <script src="static/main-layout/assets/js/custom.js"></script>
+
+    
+
+</body>
+</html>
