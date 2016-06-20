@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request,redirect,url_for,jsonify
-from flask.ext.cors import CORS
-from OpenSSL import SSL
+#from flask.ext.cors import CORS
+#from OpenSSL import SSL
 import requests
 import json
 import gdata.gauth
@@ -11,7 +11,7 @@ from data_classes import feed_save
 import rethinkdb as r
 
 app=Flask(__name__)
-CORS(app)
+#CORS(app)
 app.secret_key='akshaytaggem '
 import google_login
 from google_login import session
@@ -21,9 +21,9 @@ import mail
 import api
 import contactsAPI
 #SSL  temporary
-context = SSL.Context(SSL.SSLv23_METHOD)
-context.use_privatekey_file('server.key')
-context.use_certificate_file('server.crt')
+#context = SSL.Context(SSL.SSLv23_METHOD)
+#context.use_privatekey_file('server.key')
+#context.use_certificate_file('server.crt')
 dbSetUp()
 
 
